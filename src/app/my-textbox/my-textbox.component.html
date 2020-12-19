@@ -3,10 +3,15 @@
 <!-- Write/modify once, update everywhere -->
 <div>You have entered: {{name}}</div>
 
-<div>Hi {{name}}</div>
-<div>Hi {{name}}</div>
-<div>Hi {{name}}</div>
-<div>Hi {{name}}</div>
+<!-- Below {{name}} is example of string interpolation -->
 <div>Hi {{name}}</div>
 
 <!-- Change event -->
+
+<button (mouseleave) ="onMouseLeave()" (mouseenter) ="onMouseEnter()">Click Me</button>
+<!-- (click) -->
+<!--
+  1. Mouse hover
+  2. Mouse Enter
+  3. Mouse out
+ -->

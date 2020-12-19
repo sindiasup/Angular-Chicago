@@ -17,4 +17,12 @@ export class MyTextboxComponent implements OnInit {
   onClick() {
     window.alert("Clicked")
   }
+
+  onMouseLeave() {
+    this.name = 'Mouse Leave'
+  }
+
+  onMouseEnter() {
+    this.name = 'Mouse Enter'
+  }
 }

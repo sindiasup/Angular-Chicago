@@ -5,16 +5,28 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyTextboxComponent } from './my-textbox/my-textbox.component';
+import { HeaderComponent } from './header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { HomePageComponent } from './home-page/home-page.component';
+import { StudentFormComponent } from './student-form/student-form.component';
+import { ListStudentsComponent } from './list-students/list-students.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyTextboxComponent
+    MyTextboxComponent,
+    HeaderComponent,
+    HomePageComponent,
+    StudentFormComponent,
+    ListStudentsComponent
   ],
   imports: [
+    MatButtonModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
