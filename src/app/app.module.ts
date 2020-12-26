@@ -11,6 +11,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { HomePageComponent } from './home-page/home-page.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { ListStudentsComponent } from './list-students/list-students.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ListStudentsComponent } from './list-students/list-students.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

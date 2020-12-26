@@ -1,1 +1,34 @@
-<p>student-form works!</p>
+<mat-card id="main-card">
+  <form (submit)="onSave(studentForm)" #studentForm="ngForm">
+    <mat-card-header>
+      <div mat-card-avatar class="student-image"></div>
+      <mat-card-title>Registration</mat-card-title>
+    </mat-card-header>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Enter your first name"
+        [ngModel]= "std?.firstname"
+        required
+        name="firstname"
+        #firstname="ngModel">
+        <mat-error *ngIf="firstname.invalid">First name is required</mat-error>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Enter your first name"
+        [ngModel]= "std?.lastname"
+        required
+        name="lastname"
+        #lastname="ngModel">
+        <mat-error *ngIf="lastname.invalid">Last name is required</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button type="submit">Save</button>
+  </form>
+</mat-card>
