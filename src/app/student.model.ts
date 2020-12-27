@@ -1,4 +1,4 @@
-export class Student {
+export interface Student {
   firstname: String;
   lastname: String
 }

@@ -1,5 +1,5 @@
 <mat-card id="main-card">
-  <form (submit)="onSave(studentForm)" #studentForm="ngForm">
+  <form (submit)="onSave(studentForm)" (reset)="onReset(studentForm)" #studentForm="ngForm">
     <mat-card-header>
       <div mat-card-avatar class="student-image"></div>
       <mat-card-title>Registration</mat-card-title>
@@ -12,16 +12,15 @@
         [ngModel]= "std?.firstname"
         required
         name="firstname"
-        #firstname="ngModel">
+        #firstname="ngModel"/>
         <mat-error *ngIf="firstname.invalid">First name is required</mat-error>
     </mat-form-field>
-
     <br>
     <mat-form-field>
       <input
         type="text"
         matInput
-        placeholder="Enter your first name"
+        placeholder="Enter your Last name"
         [ngModel]= "std?.lastname"
         required
         name="lastname"
@@ -29,6 +28,26 @@
         <mat-error *ngIf="lastname.invalid">Last name is required</mat-error>
     </mat-form-field>
     <br>
+    <!-- Homework -->
+    <!--
+      1. Add age, city & address (Use textarea for address) in form
+      2. For age, put some validation and it should have dropdown to increase/decrease age
+     -->
     <button mat-raised-button type="submit">Save</button>
+    <button style="margin-left: 15px;" mat-raised-button type="reset">Reset</button>
   </form>
+</mat-card>
+
+<mat-card style="margin-top: 20px">
+  <!-- If we don't have any student registration, then pring "No Record Found!!!" -->
+  <mat-expansion-panel *ngFor="let student of students" (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{student.firstname}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>FirstName: {{student.firstname}}</p>
+    <p>LastName: {{student.lastname}}</p>
+  </mat-expansion-panel>
 </mat-card>

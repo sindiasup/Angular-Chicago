@@ -10,6 +10,9 @@ import { Student } from '../student.model';
 export class StudentFormComponent implements OnInit {
 
   std: Student;
+  panelOpenState = false;
+
+  students = [];
 
   constructor() { }
 
@@ -17,6 +20,18 @@ export class StudentFormComponent implements OnInit {
   }
 
   onSave(studentForm: NgForm) {
+    if(studentForm.invalid) {
+      window.alert("Please check the error before submit")
+      return
+    }
+    this.students.push(studentForm.value);
+
     console.log(studentForm);
+    console.log(this.students);
+    studentForm.resetForm();
+  }
+
+  onReset(studentForm: NgForm) {
+   studentForm.resetForm();
   }
 }

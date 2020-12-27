@@ -13,6 +13,8 @@ import { StudentFormComponent } from './student-form/student-form.component';
 import { ListStudentsComponent } from './list-students/list-students.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import {MatCardModule} from '@angular/material/card';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
