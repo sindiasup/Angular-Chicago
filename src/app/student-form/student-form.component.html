@@ -40,14 +40,18 @@
 
 <mat-card style="margin-top: 20px">
   <!-- If we don't have any student registration, then pring "No Record Found!!!" -->
-  <mat-expansion-panel *ngFor="let student of students" (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        {{student.firstname}}
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>FirstName: {{student.firstname}}</p>
-    <p>LastName: {{student.lastname}}</p>
-  </mat-expansion-panel>
+  <div *ngIf="students.length > 0; else noStudents">
+    <mat-expansion-panel *ngFor="let student of students" (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{student.firstname}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>FirstName: {{student.firstname}}</p>
+      <p>LastName: {{student.lastname}}</p>
+    </mat-expansion-panel>
+  </div>
+
+  <ng-template #noStudents>No students found!!!</ng-template>
 </mat-card>

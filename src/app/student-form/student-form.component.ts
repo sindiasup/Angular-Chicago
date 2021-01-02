@@ -16,7 +16,11 @@ export class StudentFormComponent implements OnInit {
 
   constructor() { }
 
+  // This function will be called when the component is rendered
   ngOnInit(): void {
+    if (localStorage.getItem('students') != null) {
+      this.students = JSON.parse(localStorage.getItem('students'));
+    }
   }
 
   onSave(studentForm: NgForm) {
@@ -25,6 +29,8 @@ export class StudentFormComponent implements OnInit {
       return
     }
     this.students.push(studentForm.value);
+
+    localStorage.setItem('students', JSON.stringify(this.students));
 
     console.log(studentForm);
     console.log(this.students);
